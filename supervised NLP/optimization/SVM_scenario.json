@@ -1,0 +1,16 @@
+{
+    "models":{
+        "model": "gaussian_process"
+    },
+    "application_name": "radar",
+    "optimization_objectives": ["1 - F1"],
+    "design_of_experiment": { "number_of_samples": 7 },
+    "optimization_iterations": 28,
+    "input_parameters" : {
+        "regularization":{
+             "parameter_type": "real",
+             "values": [0.1, 100],
+             "parameter_default": 1
+        }
+    }
+}

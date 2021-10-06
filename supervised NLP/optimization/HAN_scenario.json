@@ -1,0 +1,36 @@
+{
+    "models":{
+        "model": "gaussian_process"
+    },
+    "application_name": "radar",
+    "optimization_objectives": ["1 - F1"],
+    "design_of_experiment": { "number_of_samples": 20 },
+    "optimization_iterations": 80,
+    "input_parameters" : {
+        "learning_rate":{
+             "parameter_type": "real",
+             "values": [0.00001, 0.1],
+             "parameter_default": 0.0055
+        },
+        "beta1":{
+            "parameter_type": "real",
+            "values": [0,0.9],
+            "parameter_default": 0.9
+        },
+        "beta2":{
+            "parameter_type": "categorical",
+            "values": [0,1,2],
+            "parameter_default": 1
+        },
+        "epochs":{
+             "parameter_type": "integer",
+             "values": [3, 30],
+             "parameter_default": 11
+        },
+        "batch_size":{
+             "parameter_type": "integer",
+             "values": [16, 100],
+             "parameter_default": 55
+        }
+    }
+}
